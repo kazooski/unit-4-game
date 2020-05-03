@@ -9,6 +9,13 @@ var spellImages = [
     "assets/images/Ventus.PNG",
 ];
 
+var spellSounds = [
+    "assets/audio/spell-a.mp3",
+    "assets/audio/spell-b.mp3",
+    "assets/audio/spell-c.mp3",
+    "assets/audio/spell-d.mp3",
+]
+
 // array of values to give each spell
 var spellValues = [10, 1, 2, 3, 7];
 
@@ -58,21 +65,30 @@ function newOpponent() {
 function readyclick(){
     $(".spell-list").click(function() {
 
+        var spellSound = new Audio(spellSounds[Math.floor(Math.random()*4)]);
+        spellSound.play();
+
         var spellAttack = ($(this).attr("data-spellvalue"));
         spellAttack = parseInt(spellAttack);
         
         playerPower += spellAttack;
 
+        //adding sound effects
+
         $("#player-power").text(playerPower);
+
+        var click = new Audio("assets/audio/counter.mp3");
 
         if (playerPower === enemyPower) {
             wins++;
+            click.play();
             $("#score").text(wins + "    |    " + losses);
             reset();
         }
 
         else if (playerPower > enemyPower) {
             losses++;
+            click.play();
             $("#score").text(wins + "    |    " + losses);
             reset();
         }
@@ -102,6 +118,6 @@ reset();
 // console.log(spellValues);
 // console.log(enemyPower);
 // console.log(playerPower);
-console.log(wins);
+// console.log(wins);
 
 

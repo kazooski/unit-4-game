@@ -119,21 +119,32 @@ p {
 /* wins and losses */
 
 #score {
-    width: 270px;
+    width: 300px;
     height: 90px;
     background-color: #121d3e;
     background-image: url("../images/woodbg.jpg");
     background-size: 100% auto;
     border-radius: 25px;
     text-align: center;
-    font-size: 20px;
+    font-size: 80px;
     color: #e6edea;
+    padding: 10px;
     position: absolute;
     bottom: 0px;
     left: 50%;
-    margin-left: -135px;
-
+    margin-left: -150px;
 }
+
+/* #score-num {
+    background: #c9982b;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #86162a;
+    float: left;
+    position: relative;
+    top: 40px;
+    } */
 
 
 /* spell images */
@@ -142,9 +153,4 @@ p {
     width: 100px;
     height: 100px;
     z-index: 1;
-    /* position: absolute;
-    bottom: 0px; */
-    /* float: right; */
-    /* vertical-align: bottom; */
-
 }
