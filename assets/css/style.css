@@ -121,7 +121,13 @@ p {
 #score {
     width: 270px;
     height: 90px;
-    background-color: #f7ee23;
+    background-color: #121d3e;
+    background-image: url("../images/woodbg.jpg");
+    background-size: 100% auto;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 20px;
+    color: #e6edea;
     position: absolute;
     bottom: 0px;
     left: 50%;

@@ -12,10 +12,12 @@ var spellImages = [
 // array of values to give each spell
 var spellValues = [10, 1, 2, 3, 7];
 
-var wins;
-var losses;
+var wins = 0;
+var losses = 0;
 var enemyPower;
 var playerPower;
+
+$("#score").text(wins + "    |    " + losses);
 
 
 // in honor of Fisher-Yates we will be shuffling the values array
@@ -26,7 +28,6 @@ function initialShuffle(spellValues) {
         let index = Math.floor(Math.random() * counter);
 
         counter--;
-
         let temp = spellValues[counter];
         spellValues[counter] = spellValues[index];
         spellValues[index] = temp;
@@ -39,19 +40,10 @@ function createSpells() {
     for (var i = 0; i < spellImages.length; i++) {
 
         var imageSpell = $("<img>");
-
-        // First each crystal will be given the class ".crystal-image".
-        // This will allow the CSS to take effect.
         imageSpell.addClass("spell-list");
-
-        // Each imageCrystal will be given a src link to the crystal image
         imageSpell.attr("src", spellImages[i]);
-
-        // Each imageCrystal will be given a data attribute called data-crystalValue.
-        // This data attribute will be set equal to the array value.
         imageSpell.attr("data-spellvalue", spellValues[i]);
 
-        // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
         $("#spells").append(imageSpell);
     }
 }
@@ -67,22 +59,21 @@ function readyclick(){
     $(".spell-list").click(function() {
 
         var spellAttack = ($(this).attr("data-spellvalue"));
-        console.log(spellAttack);
         spellAttack = parseInt(spellAttack);
         
         playerPower += spellAttack;
-
-        console.log(playerPower);
 
         $("#player-power").text(playerPower);
 
         if (playerPower === enemyPower) {
             wins++;
+            $("#score").text(wins + "    |    " + losses);
             reset();
         }
 
         else if (playerPower > enemyPower) {
             losses++;
+            $("#score").text(wins + "    |    " + losses);
             reset();
         }
 
@@ -106,8 +97,11 @@ function reset() {
 }
 
 reset();
-console.log(spellValues);
-console.log(enemyPower);
-console.log(playerPower);
+
+
+// console.log(spellValues);
+// console.log(enemyPower);
+// console.log(playerPower);
+console.log(wins);
 
 
