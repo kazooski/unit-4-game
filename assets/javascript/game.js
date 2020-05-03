@@ -63,25 +63,46 @@ function newOpponent() {
 }
 
 // Casting spells: changes power values
-$(".spell-list").click(function() {
+function readyclick(){
+    $(".spell-list").click(function() {
 
-    var spellAttack = ($(this).attr("data-spellvalue"));
-    spellAttack = parseInt(spellAttack);
-    console.log(spellAttack);
-    playerPower += spellAttack;
+        var spellAttack = ($(this).attr("data-spellvalue"));
+        console.log(spellAttack);
+        spellAttack = parseInt(spellAttack);
+        
+        playerPower += spellAttack;
 
-    console.log(playerPower);
+        console.log(playerPower);
 
-    $("#player-power").text(playerPower);
-});
+        $("#player-power").text(playerPower);
+
+        if (playerPower === enemyPower) {
+            wins++;
+            reset();
+        }
+
+        else if (playerPower > enemyPower) {
+            losses++;
+            reset();
+        }
+
+    });
+}
+
+// $("#score").click(function(){
+
+//     $( ".spell-list" ).remove();
+//     console.log(spells);
+// });
 
 function reset() {
+    $( ".spell-list" ).remove();
     initialShuffle(spellValues);
     createSpells();
     newOpponent();
     playerPower = 0;
     $("#player-power").text(playerPower);
-
+    readyclick();
 }
 
 reset();
