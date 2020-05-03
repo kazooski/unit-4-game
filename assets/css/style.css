@@ -6,7 +6,7 @@ body {
     /* font-family: 'Vollkorn', serif; regular*/
     /* font-family: 'Vollkorn SC', serif; regular */
     background-image: url("../images/greathall-bg.jpg");
-    background-size: 100%;
+    background-size: auto 100%;
 }
 
 h1 {
@@ -29,7 +29,7 @@ p {
 /* wrapper */
 
 .wrapper {
-    width: 500px;
+    width: 800px;
     margin: 50px auto 0;
 }
 
@@ -39,7 +39,7 @@ p {
 #title-header {
 
     width: auto;
-    height: 80px;
+    height: 60px;
     background-color: #04121c;
     background-image: url("../images/stars-title.png");
     background-size: auto 80px;
@@ -53,10 +53,85 @@ p {
 
 /* instructions */
 
+#parchment-box {
+    width: auto;
+    height: 200px;
+    background-color: #04121c;
+    background-image: url("../images/Light-Parchment-Texture.jpg");
+    background-size: auto 300px;
+    opacity: 75%;
+    color: #04121c;
+    text-align: center;
+    padding: 10px;
+
+}
+
+/* battleground */
+
+#duel-grounds {
+    width: auto;
+    height: 350px;
+    background-color: #04121c;
+    background-image: url("../images/duelling-club.jpg");
+    background-size: auto 100%;
+    /* opacity: 70%; */
+    color: #e2e3e4;
+    position: relative;
+}
+
 /* goal sum = spell power */
+
+#opponent-power {
+    width: 90px;
+    height: 90px;
+    background-color: #86162a;
+    opacity: 100%;
+    border-radius: 20px;
+    color: #f7ee23;
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+/* score in progress */
+
+#player-power {
+    width: 90px;
+    height: 90px;
+    background-color: #15302a;
+    opacity: 100%;
+    border-radius: 20px;
+    color: #177553;
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;  
+}
 
 /* wins and losses */
 
+#score {
+    width: 270px;
+    height: 90px;
+    background-color: #f7ee23;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    margin-left: -135px;
+
+}
+
+
+
 /* spell images */
 
-/* score in progress */
+#spell-image {
+    width: 100px;
+    height: 100px;
+    /* position: absolute; */
+    /* bottom: 0px; */
+    /* float: right; */
+    /* vertical-align: bottom; */
+
+}
