@@ -1,7 +1,6 @@
 // Javascript for the crystal collector's game
 
-// array of images for src
-
+// array of images for src in index.html
 var spellImages = [
     "assets/images/finite-incantatem.PNG",
     "assets/images/incendio.PNG",
@@ -11,15 +10,15 @@ var spellImages = [
 ];
 
 // array of values to give each spell
-
 var spellValues = [10, 1, 2, 3, 7];
 
 var wins;
 var losses;
 var enemyPower;
+var playerPower;
 
 
-// in honor of Fisher-Yates we ill be shuffling the values array
+// in honor of Fisher-Yates we will be shuffling the values array
 function initialShuffle(spellValues) {
     let counter = spellValues.length;
 
@@ -50,34 +49,44 @@ function createSpells() {
 
         // Each imageCrystal will be given a data attribute called data-crystalValue.
         // This data attribute will be set equal to the array value.
-        imageSpell.attr("data-spellValue", spellValues[i]);
+        imageSpell.attr("data-spellvalue", spellValues[i]);
 
         // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
         $("#spells").append(imageSpell);
     }
 }
 
-//   // This time, our click event applies to every single crystal on the page. Not just one.
-//   $(".crystal-image").on("click", function() {
+// A new challenger appears: give enemy power a value
+function newOpponent() {
+    enemyPower = Math.floor(Math.random()*79 + 1);
+    $("#opponent-power").text(enemyPower);
+}
 
-//     // Determining the crystal's value requires us to extract the value from the data attribute.
-//     // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
-//     // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
-//     // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
+// Casting spells: changes power values
+$(".spell-list").click(function() {
 
-//     var crystalValue = ($(this).attr("data-crystalvalue"));
-//     crystalValue = parseInt(crystalValue);
-//     // We then add the crystalValue to the user's "counter" which is a global variable.
-//     // Every click, from every crystal adds to the global counter.
-//     counter += crystalValue;
+    var spellAttack = ($(this).attr("data-spellvalue"));
+    spellAttack = parseInt(spellAttack);
+    console.log(spellAttack);
+    playerPower += spellAttack;
+
+    console.log(playerPower);
+
+    $("#player-power").text(playerPower);
+});
 
 function reset() {
     initialShuffle(spellValues);
     createSpells();
+    newOpponent();
+    playerPower = 0;
+    $("#player-power").text(playerPower);
+
 }
 
 reset();
 console.log(spellValues);
 console.log(enemyPower);
+console.log(playerPower);
 
 

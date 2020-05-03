@@ -85,9 +85,13 @@ p {
     width: 90px;
     height: 90px;
     background-color: #86162a;
-    opacity: 100%;
     border-radius: 20px;
     color: #f7ee23;
+    font-size: 50px;
+    font-family: 'Vollkorn', serif;
+    text-align: center;
+    /* vertical-align: middle; */
+    padding: 10px;
     z-index: 1;
     position: absolute;
     bottom: 0px;
@@ -100,9 +104,12 @@ p {
     width: 90px;
     height: 90px;
     background-color: #15302a;
-    opacity: 100%;
     border-radius: 20px;
-    color: #177553;
+    color: #e2e3e4;
+    font-size: 50px;
+    font-family: 'Vollkorn', serif;
+    text-align: center;
+    padding: 10px;
     z-index: 1;
     position: absolute;
     bottom: 0px;
