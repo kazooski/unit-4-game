@@ -15,13 +15,13 @@ h1 {
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 20px;
     font-family: 'Vollkorn', serif;
 }
 
 
 p {
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Vollkorn SC', serif;
 }
 
@@ -123,10 +123,9 @@ p {
 }
 
 
-
 /* spell images */
 
-#spell-image {
+.spell-list {
     width: 100px;
     height: 100px;
     /* position: absolute; */
