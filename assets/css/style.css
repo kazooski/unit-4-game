@@ -1,0 +1,62 @@
+/* styling sheet for the Crystals Collector game */
+
+/* body */
+
+body {
+    /* font-family: 'Vollkorn', serif; regular*/
+    /* font-family: 'Vollkorn SC', serif; regular */
+    background-image: url("../images/greathall-bg.jpg");
+    background-size: 100%;
+}
+
+h1 {
+    font-size: 34px;
+    font-family: 'Vollkorn', serif;
+}
+
+h2 {
+    font-size: 28px;
+    font-family: 'Vollkorn', serif;
+}
+
+
+p {
+    font-size: 20px;
+    font-family: 'Vollkorn SC', serif;
+}
+
+
+/* wrapper */
+
+.wrapper {
+    width: 500px;
+    margin: 50px auto 0;
+}
+
+
+/* title header DUEL */
+
+#title-header {
+
+    width: auto;
+    height: 80px;
+    background-color: #04121c;
+    background-image: url("../images/stars-title.png");
+    background-size: auto 80px;
+    color: #e2e3e4;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0px 0px 0px 0px;
+}
+
+
+
+/* instructions */
+
+/* goal sum = spell power */
+
+/* wins and losses */
+
+/* spell images */
+
+/* score in progress */
